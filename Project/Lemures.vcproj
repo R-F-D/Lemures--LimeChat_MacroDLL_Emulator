@@ -65,7 +65,7 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="Build/$(TargetName).pdb"
 				SubSystem="1"
-				ProfileGuidedDatabase="Build/$(TargetName).pgd"
+				ProfileGuidedDatabase=""
 				TargetMachine="1"
 			/>
 			<Tool
@@ -143,6 +143,7 @@
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				ProfileGuidedDatabase=""
 				TargetMachine="1"
 			/>
 			<Tool

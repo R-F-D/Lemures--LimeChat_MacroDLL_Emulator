@@ -17,8 +17,8 @@
 	開発環境	：WindowsXP + VisualStudio 2005
 	開発言語	：C++
 
-	種別		：フリーソフトウェア
 	著作権者	：R.F.D. / ODプロジェクト
+	種別		：フリーソフトウェア
 	ライセンス	：修正BSD
 
 
@@ -37,44 +37,50 @@
 
 ▼リファレンス
 
-	コマンドプロンプト（DOS窓）よりLemures.exeを起動すると
-	DLLの関数を呼び出すための設定を入力します。
+	コマンドプロンプト(いわゆるDOS窓)よりLemures.exeを起動してください。
+	DLLファイル開発の際は、デバッガに登録しておくと便利です。
 
-		共通設定
-			(1) DLLファイルのパス
-			(2) 呼び出す関数の名前
-			(3) 呼び出す関数の種類（ [1] DllHook / [2] DllString ）
+	プログラムが起動したら、DLLの関数を呼び出すための設定を入力します。
+	これらの設定については、初期化ファイルを用意することでコンソールからの入力を省略することも可能です。
 
-		DllHookエミュレート時の設定
-			(4) 送信者のニックネーム（SenderNick）
-			(5) 送信者のユーザ名（SenderUsername）
-			(6) 送信者のアドレス（SenderAddress）
-			(7) 送信されるコマンド（Command）
-			(8) 対象チャンネル等（Target）
-			(9) コマンドに付加される文字列（Trail）
-		
-		DllStringエミュレート時の設定
-			(10)関数に渡される文字列（Input）
+		(1) DLLファイルのパス
+				対象となるDLLファイルの名前を入力してください。フルパスと相対パスのいずれでも可能です。
+				相対パス指定の場合は、実行ファイルのカレントディレクトリが正しく設定されている必要があります。
 
-	
-	(3)では、1（DllHook）または 2（DllString）を入力してください。
-	間違った入力を行うとフリーズしたり強制終了する可能性があります。
+		(2) 呼び出す関数の名前
+				DLL側に書かれた関数名を入力してください。戻り値や仮引数（括弧内）などは必要ありません。
+				大文字/小文字は区別されますので、正しく入力してください。
 
-	(4)～(10)は、それぞれ呼び出す関数の仮引数に対応しています。
-	括弧内の文字列がその名前です。
-	詳細はLimeChatのヘルプを参照してください。
+		(3) 呼び出す関数の種類（ [1] DllHook / [2] DllString ）
+				どちらの機能をエミュレートするか選択してください。
+				誤った入力を行うと、プログラムが強制終了したりフリーズする可能性があります。
 
-	(4)～(8)は、DllHook機能のエミュレート時にのみ設定します。
-	(9)は、Privmsgコマンドで言うところの発言内容にあたります。
-	
-	(10)は関数に渡される文字列です。
-	DllHookエミュレート時のTrailとは異なり、ここの内容だけしか渡されません。
-	そのため、$DllStringの使い方によっては、
-	この中に対象チャンネルや発言者の名前といった情報も含めておき、
-	DLLの関数の中でこれらを自前で解析しなければならないでしょう。
+		(4) 送信者のニックネーム（SenderNick）
+				DllHookのパラメータ SenderNick を指定します。詳細はLimeChatのヘルプを参照してください。
 
-	なお、これらの設定については、初期化ファイルを用意することで
-	コンソールからの入力を省略することも可能です。
+		(5) 送信者のユーザ名（SenderUsername）
+				DllHookのパラメータ SenderUsername を指定します。詳細はLimeChatのヘルプを参照してください。
+
+		(6) 送信者のアドレス（SenderAddress）
+				DllHookのパラメータ SenderAddress を指定します。詳細はLimeChatのヘルプを参照してください。
+
+		(7) 送信されるコマンド（Command）
+				DllHookのパラメータ Command を指定します。詳細はLimeChatのヘルプを参照してください。
+				PRIVMSG等のIRCコマンドが入ります。
+
+		(8) 対象チャンネル等（Target）
+				DllHookのパラメータ Target を指定します。詳細はLimeChatのヘルプを参照してください。
+
+		(9) コマンドに付加される文字列（Trail）
+				DllHookのパラメータ Trail を指定します。詳細はLimeChatのヘルプを参照してください。
+				例えばPRIVMSGコマンドなら、発言内容を格納します。
+
+		(10)関数に渡される文字列（Input）
+				DllString関数に渡される文字列です。DllHookエミュレート時とは異なり、この内容しか渡されません。
+				必要であれば、この中に対象チャンネルや発言者の名前といった情報も含めておき（空白区切り等）、
+				DLL側でこれらを解析してください。
+
+	※(4)～(9)はDllHookエミュレート時、(10)はDllStringエミュレート時にのみ設定する項目です。
 
 
 ▼初期化ファイル
@@ -84,21 +90,21 @@
 	Function、Trail、Function２つ以外は設定しておいたほうが無難でしょう。
 
 
-	[Common]
-		DllPath			：DLLのパス
-		FunctionName	：関数名
-		FunctionType	：関数のタイプ（[1] DllHook / [2] DllString）
+		[Common]
+			DllPath			：DLLのパス
+			FunctionName	：関数名
+			FunctionType	：関数のタイプ（[1] DllHook / [2] DllString）
 
-	[Parameter]
-		SenderNick		：ニックネーム
-		SenderUsername	：ユーザ名
-		SenderAddress	：アドレス
-		Command			：コマンド
-		Target			：対象
-		Trail			：（DllHook時）  コマンドの最後に付加される文字列
-						　（DllString時）関数に渡される文字列	
-		PrefixTrail		：Trailの前に自動的に付加される文字列
-		SuffixTrail		：Trailの後に自動的に付加される文字列
+		[Parameter]
+			SenderNick		：ニックネーム
+			SenderUsername	：ユーザ名
+			SenderAddress	：アドレス
+			Command			：コマンド
+			Target			：対象
+			Trail			：（DllHook時）  コマンドの最後に付加される文字列
+							　（DllString時）関数に渡される文字列	
+			PrefixTrail		：Trailの前に自動的に付加される文字列
+			SuffixTrail		：Trailの後に自動的に付加される文字列
 
 
 	初期化ファイルの仕様上、一部の半角スペースは無視されます。

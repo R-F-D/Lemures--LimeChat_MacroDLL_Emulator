@@ -67,7 +67,7 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="Build/$(TargetName).pdb"
 				SubSystem="2"
-				ProfileGuidedDatabase="Build/$(TargetName).pdb"
+				ProfileGuidedDatabase=""
 				ImportLibrary="Build/$(TargetName).lib"
 				TargetMachine="1"
 			/>
@@ -148,6 +148,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				ProfileGuidedDatabase=""
 				ImportLibrary="Build/$(TargetName).lib"
 				TargetMachine="1"
 			/>
