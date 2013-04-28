@@ -11,6 +11,7 @@
 [Bb]uild/
 [Rr]elease*/
 [Dd]ebug*/
+[Oo]bj/
 *.user
 *.pdb
 *.ncb
@@ -18,4 +19,6 @@
 *.pdb
 *.lib
 *.exp
+*.exe.config
+*.cache
 

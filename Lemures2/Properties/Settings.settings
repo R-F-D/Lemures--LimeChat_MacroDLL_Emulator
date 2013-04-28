@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Lemures.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DllPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SampleDll.dll</Value>
+    </Setting>
+    <Setting Name="FunctionName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FuncHook</Value>
+    </Setting>
+    <Setting Name="FunctionFormat" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SenderNick" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Nick</Value>
+    </Setting>
+    <Setting Name="SenderUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">User</Value>
+    </Setting>
+    <Setting Name="SenderAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="IrcCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PRIVMSG</Value>
+    </Setting>
+    <Setting Name="CmdTarget" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#Channel</Value>
+    </Setting>
+    <Setting Name="CmdTrail" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PlaysSound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

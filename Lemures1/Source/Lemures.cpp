@@ -1,6 +1,6 @@
 /********************************************************************************
 
-	LimeChat2.x DllHookエミュレータ
+	LimeChat DllHookエミュレータ
 
 ********************************************************************************/
 #include "Lemures.h"
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	//デフォルトが指定されていなければ入力を求める
 	SetKey(pathDLL,		"DLLファイルのパス");
 	SetKey(nameFunc,	"呼び出す関数の名前");
-	SetKey(typeFunc,	"呼び出す関数の種類（ [1] DllHook / [2] DllString ）");
+	SetKey(typeFunc,	"呼び出す関数の種類（ [1] DllHook / [2] DllFunc ）");
 
 
 	//関数に渡すパラメータをロード

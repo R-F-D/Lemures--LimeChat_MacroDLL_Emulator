@@ -1,0 +1,97 @@
+﻿<Window x:Class="Lemures.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="OD-Emu Lemures; LimeChat MacroDLL Emulator"  Width="640" Height="480" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" FontFamily="Meiryo"
+		FocusManager.FocusedElement="{Binding ElementName=cmdTrail}" Closing="Window_Closing" KeyDown="OnKeyDown">
+
+
+	<Grid>
+		<!--DLLファイルのパス-->
+		<GroupBox Header="DLLファイルのパス" Height="105" HorizontalAlignment="Left" Margin="310,10,0,0" Name="dllFile" VerticalAlignment="Top" Width="310" BorderThickness="2" BorderBrush="LimeGreen">
+			<GroupBox.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="White" Offset="0" />
+					<GradientStop Color="#FFB3F2B3" Offset="1" />
+				</LinearGradientBrush>
+			</GroupBox.Background>
+			<Grid>
+				<Button Content="参照" HorizontalAlignment="Left" Margin="245,55,0,0" Name="dllFileDialog" VerticalAlignment="Top" Width="50" Click="dllFileDialog_Click" />
+				<TextBox Height="40" Width="290" Margin="5,10,0,0" Name="dllFilePath" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" KeyDown="Textbox_OnHotKey" />
+			</Grid>
+		</GroupBox>
+
+		<!--呼び出す関数の設定-->
+		<GroupBox Header="関数の名前と種別" Height="95" HorizontalAlignment="Left" Margin="310,120,0,0" Name="dllFunctionSettings" VerticalAlignment="Top" Width="310" Background="{Binding ElementName=dllFile, Path=Background}" BorderBrush="{Binding ElementName=dllFile, Path=BorderBrush}" BorderThickness="2">
+			<Grid>
+				<RadioButton Content="DllHook形式（LimeChat2.x専用）" HorizontalAlignment="Left" Margin="10,35,0,20" Name="isDllHookFormat"  Checked="dllFuncFormat_CheckedChanged" GroupName="dllFuncFormat" />
+				<RadioButton Content="$DllFunc形式（$DllString形式）" Height="16" HorizontalAlignment="Left" Margin="10,55,0,0" Name="isDllStringFormat" VerticalAlignment="Top" Checked="dllFuncFormat_CheckedChanged" GroupName="dllFuncFormat" />
+				<TextBox Height="23" Width="200" Margin="6,10,0,0" Name="dllFunctionName" HorizontalAlignment="Left" VerticalAlignment="Top" KeyDown="Textbox_OnHotKey" />
+			</Grid>
+		</GroupBox>
+		
+		<!--関数に渡すパラメータ-->
+		<GroupBox Header="関数に渡すパラメータ" HorizontalAlignment="Left" Name="dllFunctionParameters" VerticalAlignment="Top" Width="290" Height="270" Margin="10,10,0,0" Background="{Binding ElementName=dllFile, Path=Background}" BorderBrush="{Binding ElementName=dllFile, Path=BorderBrush}"  BorderThickness="2">
+			<Grid>
+				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5, 20,0,0" Name="SenderNick"		VerticalAlignment="Top" Width="200" KeyDown="Textbox_OnHotKey" />
+				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5, 60,0,0" Name="SenderUsername"	VerticalAlignment="Top" Width="200" KeyDown="Textbox_OnHotKey" />
+				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5,100,0,0" Name="SenderAddress"	VerticalAlignment="Top" Width="200" KeyDown="Textbox_OnHotKey" />
+				<ComboBox Height="23" HorizontalAlignment="Left" Margin="5,140,0,0" Name="IrcCommand"		VerticalAlignment="Top" Width="200" ItemsSource="{Binding}" KeyDown="Textbox_OnHotKey">
+					<ComboBoxItem>PRIVMSG		</ComboBoxItem>
+					<ComboBoxItem>JOIN			</ComboBoxItem>
+					<ComboBoxItem>PART			</ComboBoxItem>
+					<ComboBoxItem>QUIT			</ComboBoxItem>
+					<ComboBoxItem>MODE			</ComboBoxItem>
+					<ComboBoxItem>NICK			</ComboBoxItem>
+					<ComboBoxItem>TOPIC			</ComboBoxItem>
+					<ComboBoxItem>KICK			</ComboBoxItem>
+					<ComboBoxItem>INVITE		</ComboBoxItem>
+					<ComboBoxItem>ACTION		</ComboBoxItem>
+					<ComboBoxItem>KEYWORD		</ComboBoxItem>
+					<ComboBoxItem>OP			</ComboBoxItem>
+					<ComboBoxItem>DEOP			</ComboBoxItem>
+					<ComboBoxItem>VOICE			</ComboBoxItem>
+					<ComboBoxItem>DEVOICE		</ComboBoxItem>
+					<ComboBoxItem>CTCPQUERY		</ComboBoxItem>
+					<ComboBoxItem>CTCPREPLY		</ComboBoxItem>
+					<ComboBoxItem>DCCCHATMESSAGE</ComboBoxItem>
+				</ComboBox>
+				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5,180,0,0" Name="cmdTarget"	VerticalAlignment="Top" Width="200" KeyDown="Textbox_OnHotKey" />
+				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5,220,0,0" Name="cmdTrail"		VerticalAlignment="Top" Width="270" KeyDown="Textbox_OnHotKey" />
+
+				<Label Height="28" HorizontalAlignment="Left" Margin="0,  0,0,0" VerticalAlignment="Top" Content="送信者のニックネーム（SenderNick）" />
+				<Label Height="28" HorizontalAlignment="Left" Margin="0, 40,0,0" VerticalAlignment="Top" Content="送信者のユーザ名（SenderUsername）" />
+				<Label Height="28" HorizontalAlignment="Left" Margin="0, 80,0,0" VerticalAlignment="Top" Content="送信者のアドレス（SenderAddress）" />
+				<Label Height="28" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Content="IRCコマンド（Command）" />
+				<Label Height="28" HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top" Content="対象チャンネル等（Target）" />
+				<Label Height="28" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Content="付加文字列（Trail）または入力文字列（Input）" />
+			</Grid>
+		</GroupBox>
+		
+		<!--各種機能-->
+		<GroupBox HorizontalAlignment="Left" Margin="300,220,0,0" Name="groupBox1" VerticalAlignment="Top" Width="320" Height="75"  BorderBrush="{x:Null}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="112*" />
+					<ColumnDefinition Width="74*" />
+					<ColumnDefinition Width="52*" />
+				</Grid.ColumnDefinitions>
+				<Button Content="試行" Width="64" Height="48" HorizontalAlignment="Left" Margin="4,12,0,0" Name="testing" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF003C74" Click="testing_Click"></Button>
+				<CheckBox Content="試行時にサウンドを鳴らす" HorizontalAlignment="Right" Margin="0,0,46,29" Name="playsSound" VerticalAlignment="Bottom" IsChecked="True" Grid.ColumnSpan="3" Width="160" />
+				<CheckBox Content="フォーム内容を保持する"   HorizontalAlignment="Right" Margin="0,0,46,9" Name="savesForm"  VerticalAlignment="Bottom" IsChecked="True" Grid.ColumnSpan="3" Width="160" />
+				<Button Height="23" HorizontalAlignment="Left" Margin="20,37,0,0" Name="openConfig" VerticalAlignment="Top" Width="45" Content="保存先" Click="openConfig_Click" Grid.Column="2" />
+			</Grid>
+		</GroupBox>
+
+		<!--入出力-->
+		<GroupBox HorizontalAlignment="Left" Margin="10,290,0,0" Name="result" VerticalAlignment="Top" Width="610" BorderBrush="{x:Null}">
+			<Grid>
+				<TextBox FontSize="14" Height="23" HorizontalAlignment="Left" Margin="10,20,0,0" Name="inputMessage"  VerticalAlignment="Top" IsReadOnlyCaretVisible="True" TextWrapping="NoWrap" Width="580" FontFamily="MS Gothic" IsReadOnly="True" IsEnabled="False" />
+				<TextBox FontSize="14" Height="80" HorizontalAlignment="Left" Margin="10,65,0,0" Name="outputMessage" VerticalAlignment="Top" Width="580" IsReadOnlyCaretVisible="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="MS Gothic" IsReadOnly="True" IsEnabled="False" />
+				<Label Content="入力文字列" Height="28" HorizontalAlignment="Left" Margin="5,-1,0,0" VerticalAlignment="Top" />
+				<Label Content="出力文字列" Height="28" HorizontalAlignment="Left" Margin="5,44,0,0" VerticalAlignment="Top" />
+				<Label Content="0 byte(s)" Height="28" HorizontalAlignment="Right" Margin="0,-1,8,0" Name="inputSize" VerticalAlignment="Top" FontSize="12" />
+				<Label Content="0 byte(s)" Height="28" HorizontalAlignment="Right" Margin="0,44,8,0" Name="outputSize" VerticalAlignment="Top" FontSize="12" />
+			</Grid>
+		</GroupBox>
+	</Grid>
+</Window>
