@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Lemures.MainWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		Title="OD-Emu Lemures; LimeChat MacroDLL Emulator"  Width="640" Height="480" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" FontFamily="Meiryo"
+		Title="OD Lemures: LimeChat MacroDLL Emulator"  Width="640" Height="480" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" FontFamily="Meiryo"
 		FocusManager.FocusedElement="{Binding ElementName=cmdTrail}" Closing="Window_Closing" KeyDown="OnKeyDown">
 
 

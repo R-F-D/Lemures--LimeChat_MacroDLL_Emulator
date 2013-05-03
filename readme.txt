@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 
-	OD-Em Lemures - LimeChat MacroDLL Emulator -
+	OD Lemures: LimeChat MacroDLL Emulator
 
 --------------------------------------------------------------------------------
 
@@ -9,14 +9,14 @@
 ▼はじめに
 
 	このプログラムは単体では機能しません。
-	Win32版LimeChat(http://limechat.net/)のマクロツールの作成を補佐するために作られた、
+	Win32版LimeChat( http://limechat.net/ )のマクロツールの作成を補佐するために作られた、
 	DLL開発者またはLimeChatヘビーユーザ向けのソフトウェアです。
 
 
 --------------------
 ▼ソフトウェア概要
 
-	名称		：OD-Emu Lemures ; LimeChat MacroDLL Emulator 
+	名称		：OD Lemures: LimeChat MacroDLL Emulator 
 	著作権者	：R.F.D. / ODプロジェクト
 	種別		：フリーソフトウェア
 	ライセンス	：修正BSD
@@ -214,8 +214,10 @@
 --------------------
 ▼開発履歴
 
+	2013/05/04	Version 2.0.1	微調整
 	2013/04/28	Version 2.0.0	2.x系を初リリース。
 
+	2013/05/04	Version 1.2.2	微調整
 	2013/04/28	Version 1.2.1	$FuncString形式を$FuncHook形式に統一。ファイル構成変更。ライセンスファイル誤字修正。
 	2013/02/03	Version 1.2.0	ライセンスを修正BSDに変更。ファイル構成を変更。
 	2007/06/18	Version 1.1.0	$DllStringに対応、それに伴いパラメータなどを修正

@@ -14,8 +14,8 @@ typedef void (*DLLFUNC_HOOK)(DLLARG_HOOK);
 typedef void (*DLLFUNC_STR) (DLLARG_STR);
 
 //基本情報
-const std::string	SOFTWARE_NAME		= "Lemures - LimeChat MacroDLL Emulator -";	//ソフトウェア名
-const int			SOFTWARE_VERSION[3]	= {1,2,1};													//ソフトウェアのバージョン
+const std::string	SOFTWARE_NAME		= "OD Lemures: LimeChat MacroDLL Emulator -";	//ソフトウェア名
+const int			SOFTWARE_VERSION[3]	= {1,2,2};													//ソフトウェアのバージョン
 const std::string	INIFILE_NAME		= "Lemures1.ini";											//設定ファイルのパス
 
 //バッファサイズ
