@@ -22,7 +22,7 @@ namespace Lemures.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Lemures.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lemures.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,174 @@ namespace Lemures.Properties {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   対象チャンネル等（Target） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_CmdTarget {
+            get {
+                return ResourceManager.GetString("Text_CmdTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   付加文字列（Trail）または入力文字列（Input） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_CmdTrail {
+            get {
+                return ResourceManager.GetString("Text_CmdTrail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   DLLファイルのパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_Filepath {
+            get {
+                return ResourceManager.GetString("Text_Filepath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   $DllFunc形式（$DllString形式） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_FuncFormat_DllFunc {
+            get {
+                return ResourceManager.GetString("Text_FuncFormat_DllFunc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   DllHook形式（LimeChat2.x専用） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_FuncFormat_DllHook {
+            get {
+                return ResourceManager.GetString("Text_FuncFormat_DllHook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   関数の名前と種別 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_FuncSettingsCaption {
+            get {
+                return ResourceManager.GetString("Text_FuncSettingsCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   入力文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_InputBuffer {
+            get {
+                return ResourceManager.GetString("Text_InputBuffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   IRCコマンド（Command） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_IrcCommand {
+            get {
+                return ResourceManager.GetString("Text_IrcCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   保存先 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_Option_OpenConfigDir {
+            get {
+                return ResourceManager.GetString("Text_Option_OpenConfigDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   試行時にサウンドを鳴らす に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_Option_PlaysSound {
+            get {
+                return ResourceManager.GetString("Text_Option_PlaysSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   フォーム内容を保持する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_Option_SavesForm {
+            get {
+                return ResourceManager.GetString("Text_Option_SavesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   出力文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_OutputBuffer {
+            get {
+                return ResourceManager.GetString("Text_OutputBuffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   関数に渡すパラメータ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_ParamCaption {
+            get {
+                return ResourceManager.GetString("Text_ParamCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   参照 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_ReferPath {
+            get {
+                return ResourceManager.GetString("Text_ReferPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   試行 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_Run {
+            get {
+                return ResourceManager.GetString("Text_Run", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   送信者のアドレス（SenerAddress） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_SenderAddress {
+            get {
+                return ResourceManager.GetString("Text_SenderAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   送信者のニックネーム（SenerNick） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_SenderNick {
+            get {
+                return ResourceManager.GetString("Text_SenderNick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   送信者のユーザ名（SenderUsername） に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Text_SenderUsername {
+            get {
+                return ResourceManager.GetString("Text_SenderUsername", resourceCulture);
             }
         }
     }

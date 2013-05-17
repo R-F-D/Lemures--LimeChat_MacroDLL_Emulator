@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,63 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Text_CmdTarget" xml:space="preserve">
+    <value>対象チャンネル等（Target）</value>
+  </data>
+  <data name="Text_CmdTrail" xml:space="preserve">
+    <value>付加文字列（Trail）または入力文字列（Input）</value>
+  </data>
+  <data name="Text_Filepath" xml:space="preserve">
+    <value>DLLファイルのパス</value>
+  </data>
+  <data name="Text_FuncFormat_DllFunc" xml:space="preserve">
+    <value>$DllFunc形式（$DllString形式）</value>
+  </data>
+  <data name="Text_FuncFormat_DllHook" xml:space="preserve">
+    <value>DllHook形式（LimeChat2.x専用）</value>
+  </data>
+  <data name="Text_FuncSettingsCaption" xml:space="preserve">
+    <value>関数の名前と種別</value>
+  </data>
+  <data name="Text_InputBuffer" xml:space="preserve">
+    <value>入力文字列</value>
+  </data>
+  <data name="Text_IrcCommand" xml:space="preserve">
+    <value>IRCコマンド（Command）</value>
+  </data>
+  <data name="Text_Option_OpenConfigDir" xml:space="preserve">
+    <value>保存先</value>
+  </data>
+  <data name="Text_Option_PlaysSound" xml:space="preserve">
+    <value>試行時にサウンドを鳴らす</value>
+  </data>
+  <data name="Text_Option_SavesForm" xml:space="preserve">
+    <value>フォーム内容を保持する</value>
+  </data>
+  <data name="Text_OutputBuffer" xml:space="preserve">
+    <value>出力文字列</value>
+  </data>
+  <data name="Text_ParamCaption" xml:space="preserve">
+    <value>関数に渡すパラメータ</value>
+  </data>
+  <data name="Text_ReferPath" xml:space="preserve">
+    <value>参照</value>
+  </data>
+  <data name="Text_Run" xml:space="preserve">
+    <value>試行</value>
+  </data>
+  <data name="Text_SenderAddress" xml:space="preserve">
+    <value>送信者のアドレス（SenerAddress）</value>
+  </data>
+  <data name="Text_SenderNick" xml:space="preserve">
+    <value>送信者のニックネーム（SenerNick）</value>
+  </data>
+  <data name="Text_SenderUsername" xml:space="preserve">
+    <value>送信者のユーザ名（SenderUsername）</value>
+  </data>
 </root>

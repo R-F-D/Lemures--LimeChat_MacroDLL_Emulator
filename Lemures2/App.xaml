@@ -1,8 +1,12 @@
 ﻿<Application x:Class="Lemures.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="../Source/Xaml/MainWindow.xaml">
-    <Application.Resources>
+			 xmlns:lang="clr-namespace:Lemures.Properties"
+             StartupUri="Source/Xaml/MainWindow.xaml">
+
+	<Application.Resources>
+	
+		<lang:Resources x:Key="TextResources" />
          
     </Application.Resources>
 </Application>
