@@ -4,9 +4,7 @@
 		Title="OD Lemures: LimeChat MacroDLL Emulator"  Width="640" Height="480" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize" FontFamily="Meiryo"
 		FocusManager.FocusedElement="{Binding ElementName=cmdTrail}" Closing="Window_Closing" KeyDown="OnKeyDown">
 
-
 	<Grid>
-		<!--DLLファイルのパス-->
 		<GroupBox Header="{Binding Source={StaticResource TextResources}, Path=Text_Filepath}" Height="105" HorizontalAlignment="Left" Margin="310,10,0,0" Name="dllFile" VerticalAlignment="Top" Width="310" BorderThickness="2" BorderBrush="LimeGreen">
 			<GroupBox.Background>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -20,7 +18,6 @@
 			</Grid>
 		</GroupBox>
 
-		<!--呼び出す関数の設定-->
 		<GroupBox Header="{Binding Source={StaticResource TextResources}, Path=Text_FuncSettingsCaption}" Height="95" HorizontalAlignment="Left" Margin="310,120,0,0" Name="dllFunctionSettings" VerticalAlignment="Top" Width="310" Background="{Binding ElementName=dllFile, Path=Background}" BorderBrush="{Binding ElementName=dllFile, Path=BorderBrush}" BorderThickness="2">
 			<Grid>
 				<RadioButton Content="{Binding Source={StaticResource TextResources}, Path=Text_FuncFormat_DllHook}" HorizontalAlignment="Left" Margin="10,35,0,20" Name="isDllHookFormat"  Checked="dllFuncFormat_CheckedChanged" GroupName="dllFuncFormat" />
@@ -29,7 +26,6 @@
 			</Grid>
 		</GroupBox>
 		
-		<!--関数に渡すパラメータ-->
 		<GroupBox HorizontalAlignment="Left" Name="dllFunctionParameters" VerticalAlignment="Top" Width="290" Height="270" Margin="10,10,0,0" Background="{Binding ElementName=dllFile, Path=Background}" BorderBrush="{Binding ElementName=dllFile, Path=BorderBrush}"  BorderThickness="2" Header="{Binding Source={StaticResource TextResources}, Path=Text_ParamCaption}">
 			<Grid>
 				<TextBox  Height="23" HorizontalAlignment="Left" Margin="5, 20,0,0" Name="SenderNick"		VerticalAlignment="Top" Width="200" KeyDown="Textbox_OnHotKey" />
@@ -67,7 +63,6 @@
 			</Grid>
 		</GroupBox>
 		
-		<!--各種機能-->
 		<GroupBox HorizontalAlignment="Left" Margin="300,220,0,0" Name="groupBox1" VerticalAlignment="Top" Width="320" Height="75"  BorderBrush="{x:Null}">
 			<Grid>
 				<Grid.ColumnDefinitions>
@@ -82,7 +77,6 @@
 			</Grid>
 		</GroupBox>
 
-		<!--入出力-->
 		<GroupBox HorizontalAlignment="Left" Margin="10,290,0,0" Name="result" VerticalAlignment="Top" Width="610" BorderBrush="{x:Null}">
 			<Grid>
 				<TextBox FontSize="14" Height="23" HorizontalAlignment="Left" Margin="10,20,0,0" Name="inputMessage"  VerticalAlignment="Top" IsReadOnlyCaretVisible="True" TextWrapping="NoWrap" Width="580" FontFamily="MS Gothic" IsReadOnly="True" IsEnabled="False" />
@@ -94,4 +88,7 @@
 			</Grid>
 		</GroupBox>
 	</Grid>
+	
 </Window>
+
+	

@@ -25,7 +25,17 @@ namespace Lemures
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
+			try
+			{
+				InitializeComponent();
+			}
+			catch(Exception e)
+			{
+				MessageBox.Show(e.ToString(),"Error");
+				System.Environment.Exit(1);
+				return;
+			}
+
 			this.LoadSettings();
 			this.SaveSettings();
 		}
